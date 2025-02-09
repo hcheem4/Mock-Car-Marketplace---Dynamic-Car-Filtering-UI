@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mock Car Marketplace</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a8f24ce487.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">CAR MARKET</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Used Cars</a></li>
+        <li><a href="#">Auto Parts</a></li>
+        <li><a href="#">Real Estate</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <main class="content">
+      <section class="search-bar">
+        <div class="search-form">
+          <!-- Car Brand -->
+          <label for="brand">Brand:</label>
+          <select id="brand" name="brand" onchange="filterCars()">
+            <option value="">All Brands</option>
+            <!-- Clear option -->
+            <option value="Toyota">Toyota</option>
+            <option value="Kia">Kia</option>
+            <option value="Cadillac">Cadillac</option>
+            <option value="Honda">Honda</option>
+            <option value="Subaru">Subaru</option>
+          </select>
+
+          <!-- Car Type -->
+          <label for="type">Type:</label>
+          <select id="type" name="type" onchange="filterCars()">
+            <option value="">All Types</option>
+            <!-- Clear option -->
+            <option value="Sedan">Sedan</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="SUV">SUV</option>
+            <option value="Coupe">Coupe</option>
+            <option value="Wagon">Wagon</option>
+            <option value="Pickup">Pickup</option>
+          </select>
+
+          <!-- Transmission -->
+          <label for="transmission">Transmission:</label>
+          <select id="transmission" name="transmission" onchange="filterCars()">
+            <option value="">All Transmissions</option>
+            <!-- Clear option -->
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+            <option value="CVT Automatic">CVT Automatic</option>
+            <option value="Auto Sequential Sport">Auto Sequential Sport</option>
+          </select>
+
+          <!-- Price Range -->
+          <label for="price">Max Price ($):</label>
+          <div class="input-container">
+            <input
+              type="number"
+              id="price"
+              name="price"
+              min="5000"
+              max="100000"
+              step="1000"
+              placeholder="Enter max price"
+              onchange="filterCars()"
+            />
+            <button class="clear-btn" onclick="clearPrice()">X</button>
+          </div>
+
+          <!-- Mileage -->
+          <label for="mileage">Max Mileage (km):</label>
+          <div class="input-container">
+            <input
+              type="number"
+              id="mileage"
+              name="mileage"
+              min="0"
+              max="50000"
+              step="1000"
+              placeholder="Enter max mileage"
+              onchange="filterCars()"
+            />
+            <button class="clear-btn" onclick="clearMileage()">X</button>
+          </div>
+
+          <!-- 🔥 Clear All Button -->
+          <button class="clear-all-btn" onclick="clearAllFilters()">
+            Clear All
+          </button>
+
+          <!-- Search Button -->
+          <button class="search-button" onclick="filterCars()">Search</button>
+        </div>
+      </section>
+
+      <section class="featured-cars"></section>
+    </main>
+  </body>
+</html>
